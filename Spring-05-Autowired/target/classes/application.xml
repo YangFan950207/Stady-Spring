@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd"
+
+>
+
+
+    <bean id="dog" class="com.yang.pojo.Dog"></bean>
+    <bean id="dog2" class="com.yang.pojo.Dog"></bean>
+    <bean id="cat1" class="com.yang.pojo.Cat"></bean>
+    <bean id="cat2" class="com.yang.pojo.Cat"></bean>
+    <!--byType的时候.需要保证所有bean的class的唯一,并且这个bean需要和自动注入的class一致-->
+   <!-- <bean id="people" class="com.yang.pojo.People" autowire="byType">
+      &lt;!&ndash;  <property name="cat" ref="cat"></property>
+        <property name="dog" ref="dog"/>&ndash;&gt;
+        <property name="name" value="利斯塔"/>
+    </bean>-->
+    <!--byName的时候.需要保证所有bean的id的唯一,并且这个bean需要和自动注入的属性set方法的值一致-->
+    <bean id="people" class="com.yang.pojo.People" autowire="byName">
+    <!--  <property name="cat" ref="cat"></property>
+      <property name="dog" ref="dog"/>-->
+    <property name="name" value="利斯塔"/>
+</bean>
+    <context:annotation-config/>
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--构造器 创建对象-->
+    <!--用索引方式创建对象-->
+    <!--  <bean id="hello" class="com.yangfan.model.Hello">
+          <constructor-arg index="0" value="Spring 索引创建对象"></constructor-arg>
+      </bean>-->
+    <!--使用数据类型创建对象-->
+    <!--  <bean id="hello" class="com.yangfan.model.Hello">
+         <constructor-arg type="java.lang.String" value="Spring 使用数据类型构造创建对象"></constructor-arg>
+      </bean>-->
+    <!--通过参数名来创建对象-->
+    <!--   <bean id="hello" class="com.yangfan.model.Hello">
+           <constructor-arg name="string" value="通过参数名来创建对象"></constructor-arg>
+       </bean>-->
+
+    <bean id="hello" class="com.yangfan.model.Hello" name="hello2,hello3,hello4">
+        <constructor-arg name="string" value="通过参数名来创建对象"></constructor-arg>
+    </bean>
+    <bean id="helloT" class="com.yangfan.model.HelloT">
+
+    </bean>
+</beans>

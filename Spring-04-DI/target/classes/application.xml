@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.yang.pojo.Address">
+        <property name="address" value="北京"></property>
+    </bean>
+
+    <bean id="student" class="com.yang.pojo.Student" >
+        <!--普通注入-->
+        <property name="name" value="贝拉"></property>
+        <!--Bean注入-->
+        <property name="address" ref="address"></property>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+                <value>西游记</value>
+            </array>
+        </property>
+        <!--list注入-->
+        <property name="friends">
+            <list>
+                <value>小明</value>
+                <value>小红</value>
+                <value>小绿</value>
+                <value>小黄</value>
+            </list>
+        </property>
+        <!--map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="11111111111111111111111111"></entry>
+                <entry key="银行卡" value="22222222222222222222222222"></entry>
+            </map>
+        </property>
+        <!--set注入-->
+        <property name="games">
+            <set>
+                <value>守望先锋</value>
+                <value>LOL</value>
+                <value>梦幻西游</value>
+                <value>洛奇英雄传</value>
+            </set>
+        </property>
+        <!--null注入-->
+        <property name="wife">
+            <null/>
+        </property>
+        <!--Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="driver">20201209</prop>
+            </props>
+        </property>
+    </bean>
+
+<import resource="userBeans.xml"/>
+</beans>
